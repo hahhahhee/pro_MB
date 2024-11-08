@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매 페이지</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+    <!-- jQuery 및 Slick JS 추가 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <style>
+        .brand-section {
+            margin-bottom: 3rem;
+        }
+        .car-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .car-card:hover {
+            transform: scale(1.05);
+        }
+        .car-image {
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 네비게이션 바 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Motor Buy</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto justify-content-center">
+                    <li class="nav-item mr-4"><a class="nav-link" href="#">차량</a></li>
+                    <li class="nav-item mr-4"><a class="nav-link" href="#">구매</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
+                </ul>
+                <a href="#" class="nav-link text-dark"><i class="bi bi-person-fill"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center my-5">구매 가능한 차량</h2>
+
+        <!-- 기아 섹션 -->
+        <div class="brand-section">
+            <h3>기아</h3>
+            <div id="kiaCarousel" class="slick-carousel">
+                <div class="car-card">
+                    <img src="kia_model1.jpg" class="card-img-top car-image" alt="기아 모델 1">
+                    <div class="card-body">
+                        <h5 class="card-title">기아 모델 1</h5>
+                        <p class="card-text">모델 설명 1.</p>
+                        <a href="#" class="btn btn-primary">구매하기</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="kia_model2.jpg" class="card-img-top car-image" alt="기아 모델 2">
+                    <div class="card-body">
+                        <h5 class="card-title">기아 모델 2</h5>
+                        <p class="card-text">모델 설명 2.</p>
+                        <a href="#" class="btn btn-primary">구매하기</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="kia_model3.jpg" class="card-img-top car-image" alt="기아 모델 3">
+                    <div class="card-body">
+                        <h5 class="card-title">기아 모델 3</h5>
+                        <p class="card-text">모델 설명 3.</p>
+                        <a href="#" class="btn btn-primary">구매하기</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="kia_model4.jpg" class="card-img-top car-image" alt="기아 모델 4">
+                    <div class="card-body">
+                        <h5 class="card-title">기아 모델 4</h5>
+                        <p class="card-text">모델 설명 4.</p>
+                        <a href="#" class="btn btn-primary">구매하기</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="kia_model5.jpg" class="card-img-top car-image" alt="기아 모델 5">
+                    <div class="card-body">
+                        <h5 class="card-title">기아 모델 5</h5>
+                        <p class="card-text">모델 설명 5.</p>
+                        <a href="#" class="btn btn-primary">구매하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 현대 섹션 -->
+        <div class="brand-section">
+            <h3>현대</h3>
+            <div id="hyundaiCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-6 col-md-4">
+                                <div class="card car-card">
+                                    <img src="hyundai_model1.jpg" class="card-img-top car-image" alt="현대 모델 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">현대 모델 1</h5>
+                                        <p class="card-text">모델 설명 1.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="card car-card">
+                                    <img src="hyundai_model2.jpg" class="card-img-top car-image" alt="현대 모델 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">현대 모델 2</h5>
+                                        <p class="card-text">모델 설명 2.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="card car-card">
+                                    <img src="hyundai_model3.jpg" class="card-img-top car-image" alt="현대 모델 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">현대 모델 3</h5>
+                                        <p class="card-text">모델 설명 3.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-6 col-md-4">
+                                <div class="card car-card">
+                                    <img src="hyundai_model4.jpg" class="card-img-top car-image" alt="현대 모델 4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">현대 모델 4</h5>
+                                        <p class="card-text">모델 설명 4.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="card car-card">
+                                    <img src="hyundai_model5.jpg" class="card-img-top car-image" alt="현대 모델 5">
+                                    <div class="card-body">
+                                        <h5 class="card-title">현대 모델 5</h5>
+                                        <p class="card-text">모델 설명 5.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#hyundaiCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">이전</span>
+                </a>
+                <a class="carousel-control-next" href="#hyundaiCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">다음</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- BMW 섹션 -->
+        <div class="brand-section">
+            <h3>BMW</h3>
+            <div id="bmwCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="bmw_model1.jpg" class="card-img-top car-image" alt="BMW 모델 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">BMW 모델 1</h5>
+                                        <p class="card-text">모델 설명 1.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="bmw_model2.jpg" class="card-img-top car-image" alt="BMW 모델 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">BMW 모델 2</h5>
+                                        <p class="card-text">모델 설명 2.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="bmw_model3.jpg" class="card-img-top car-image" alt="BMW 모델 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">BMW 모델 3</h5>
+                                        <p class="card-text">모델 설명 3.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="bmw_model4.jpg" class="card-img-top car-image" alt="BMW 모델 4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">BMW 모델 4</h5>
+                                        <p class="card-text">모델 설명 4.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="bmw_model5.jpg" class="card-img-top car-image" alt="BMW 모델 5">
+                                    <div class="card-body">
+                                        <h5 class="card-title">BMW 모델 5</h5>
+                                        <p class="card-text">모델 설명 5.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#bmwCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">이전</span>
+                </a>
+                <a class="carousel-control-next" href="#bmwCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">다음</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 벤츠 섹션 -->
+        <div class="brand-section">
+            <h3>벤츠</h3>
+            <div id="benzCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="benz_model1.jpg" class="card-img-top car-image" alt="벤츠 모델 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">벤츠 모델 1</h5>
+                                        <p class="card-text">모델 설명 1.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="benz_model2.jpg" class="card-img-top car-image" alt="벤츠 모델 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">벤츠 모델 2</h5>
+                                        <p class="card-text">모델 설명 2.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="benz_model3.jpg" class="card-img-top car-image" alt="벤츠 모델 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">벤츠 모델 3</h5>
+                                        <p class="card-text">모델 설명 3.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="benz_model4.jpg" class="card-img-top car-image" alt="벤츠 모델 4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">벤츠 모델 4</h5>
+                                        <p class="card-text">모델 설명 4.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="benz_model5.jpg" class="card-img-top car-image" alt="벤츠 모델 5">
+                                    <div class="card-body">
+                                        <h5 class="card-title">벤츠 모델 5</h5>
+                                        <p class="card-text">모델 설명 5.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#benzCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">이전</span>
+                </a>
+                <a class="carousel-control-next" href="#benzCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">다음</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 테슬라 섹션 -->
+        <div class="brand-section">
+            <h3>테슬라</h3>
+            <div id="teslaCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="tesla_model1.jpg" class="card-img-top car-image" alt="테슬라 모델 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">테슬라 모델 1</h5>
+                                        <p class="card-text">모델 설명 1.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="tesla_model2.jpg" class="card-img-top car-image" alt="테슬라 모델 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">테슬라 모델 2</h5>
+                                        <p class="card-text">모델 설명 2.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="tesla_model3.jpg" class="card-img-top car-image" alt="테슬라 모델 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">테슬라 모델 3</h5>
+                                        <p class="card-text">모델 설명 3.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="tesla_model4.jpg" class="card-img-top car-image" alt="테슬라 모델 4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">테슬라 모델 4</h5>
+                                        <p class="card-text">모델 설명 4.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card car-card">
+                                    <img src="tesla_model5.jpg" class="card-img-top car-image" alt="테슬라 모델 5">
+                                    <div class="card-body">
+                                        <h5 class="card-title">테슬라 모델 5</h5>
+                                        <p class="card-text">모델 설명 5.</p>
+                                        <a href="#" class="btn btn-primary">구매하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#teslaCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">이전</span>
+                </a>
+                <a class="carousel-control-next" href="#teslaCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">다음</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#kiaCarousel').slick({
+                infinite: true,
+                slidesToShow: 1, // 모바일에서 한 개씩
+                slidesToScroll: 1, // 한 번에 한 개씩
+                dots: true, // 아래에 점 표시
+                arrows: true, // 화살표 표시
+                responsive: [
+                    {
+                        breakpoint: 768, // md 사이즈에서 3개
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 992, // lg 사이즈에서 4개
+                        settings: {
+                            slidesToShow: 4
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+        
+    <!-- Bootstrap JS, jQuery, Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

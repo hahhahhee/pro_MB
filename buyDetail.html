@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매 상세 페이지</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .car-image {
+            width: 100%;
+            height: auto;
+        }
+        .option-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 네비게이션 바 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Motor Buy</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto justify-content-center">
+                    <li class="nav-item mr-4"><a class="nav-link" href="buylist.html">구매 목록</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
+                </ul>
+                <a href="#" class="nav-link text-dark"><i class="bi bi-person-fill"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center my-5">구매 상세 정보</h2>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <img src="car_detail.jpg" class="car-image" alt="차량 이미지">
+            </div>
+            <div class="col-md-6">
+                <h3>차량 모델 이름</h3>
+                <p>차량 설명: 이 차량은 최신 기술이 적용되어 있습니다.</p>
+                <p class="option-label">가격: <strong id="basePrice">₩30,000,000</strong></p>
+                <p class="option-label">최종 가격: <strong id="finalPrice">₩30,000,000</strong></p>
+
+                <h5 class="option-label">옵션 선택</h5>
+                
+                <div class="form-group">
+                    <label for="colorSelect">차량 색상</label>
+                    <select class="form-control" id="colorSelect" onchange="updatePrice()">
+                        <option value="0">흰색 (기본)</option>
+                        <option value="500000">검정색 (+₩500,000)</option>
+                        <option value="300000">파란색 (+₩300,000)</option>
+                        <option value="700000">빨간색 (+₩700,000)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="engineSelect">엔진 옵션</label>
+                    <select class="form-control" id="engineSelect" onchange="updatePrice()">
+                        <option value="0">가솔린 (기본)</option>
+                        <option value="2000000">디젤 (+₩2,000,000)</option>
+                        <option value="3000000">하이브리드 (+₩3,000,000)</option>
+                        <option value="4000000">전기 (+₩4,000,000)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="trimSelect">트림 선택</label>
+                    <select class="form-control" id="trimSelect" onchange="updatePrice()">
+                        <option value="0">기본</option>
+                        <option value="1000000">중간 (+₩1,000,000)</option>
+                        <option value="2000000">고급 (+₩2,000,000)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="wheelSelect">휠 옵션</label>
+                    <select class="form-control" id="wheelSelect" onchange="updatePrice()">
+                        <option value="0">17인치 (기본)</option>
+                        <option value="500000">18인치 (+₩500,000)</option>
+                        <option value="1000000">19인치 (+₩1,000,000)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="interiorSelect">내장재 선택</label>
+                    <select class="form-control" id="interiorSelect" onchange="updatePrice()">
+                        <option value="0">가죽 (기본)</option>
+                        <option value="1000000">패브릭 (+₩1,000,000)</option>
+                        <option value="2000000">나무 마감 (+₩2,000,000)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="featuresSelect">추가 기능</label>
+                    <select multiple class="form-control" id="featuresSelect" onchange="updatePrice()">
+                        <option value="1000000">내비게이션 시스템 (+₩1,000,000)</option>
+                        <option value="500000">고급 스피커 시스템 (+₩500,000)</option>
+                        <option value="2000000">자동 주차 (+₩2,000,000)</option>
+                        <option value="3000000">차선 유지 보조 (+₩3,000,000)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="warrantySelect">보증 연장</label>
+                    <select class="form-control" id="warrantySelect" onchange="updatePrice()">
+                        <option value="0">기본 보증 (기본)</option>
+                        <option value="1000000">2년 연장 (+₩1,000,000)</option>
+                        <option value="2000000">5년 연장 (+₩2,000,000)</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-success btn-lg">결제하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const basePrice = 30000000;
+
+        function updatePrice() {
+            let totalPrice = basePrice;
+
+            // 각 옵션의 선택된 값을 가져와서 가격에 추가
+            totalPrice += parseInt(document.getElementById("colorSelect").value);
+            totalPrice += parseInt(document.getElementById("engineSelect").value);
+            totalPrice += parseInt(document.getElementById("trimSelect").value);
+            totalPrice += parseInt(document.getElementById("wheelSelect").value);
+            totalPrice += parseInt(document.getElementById("interiorSelect").value);
+
+            // 추가 기능은 다중 선택이므로 체크박스의 값을 모두 더해야 함
+            const features = document.getElementById("featuresSelect");
+            for (let i = 0; i < features.options.length; i++) {
+                if (features.options[i].selected) {
+                    totalPrice += parseInt(features.options[i].value);
+                }
+            }
+
+            totalPrice += parseInt(document.getElementById("warrantySelect").value);
+
+            // 최종 가격 업데이트
+            document.getElementById("finalPrice").innerText = `₩${totalPrice.toLocaleString()}`;
+        }
+    </script>
+
+    <!-- Bootstrap JS, jQuery, Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
